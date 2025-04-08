@@ -4,7 +4,7 @@ import {oxygen} from '@shopify/mini-oxygen/vite';
 import {vitePlugin as remix} from '@remix-run/dev';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-declare module "@remix-run/server-runtime" {
+declare module '@remix-run/server-runtime' {
   interface Future {
     v3_singleFetch: true;
   }
@@ -32,6 +32,10 @@ export default defineConfig({
     // withtout inlining assets as base64:
     assetsInlineLimit: 0,
   },
+  css: {
+    // Use the external PostCSS config
+    postcss: './postcss.config.cjs',
+  },
   ssr: {
     optimizeDeps: {
       /**
@@ -44,7 +48,7 @@ export default defineConfig({
        * Include 'example-dep' in the array below.
        * @see https://vitejs.dev/config/dep-optimization-options
        */
-      include: [],
+      include: ['fast-memoize', 'react-draggable'],
     },
   },
 });

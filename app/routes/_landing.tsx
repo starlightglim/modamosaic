@@ -9,10 +9,12 @@ import {
 } from '@remix-run/react';
 import resetStyles from '~/styles/reset.css?url';
 import appStyles from '~/styles/app.css?url';
-import {PageLayout} from '~/components/global/PageLayout';
-import { RootLoader } from './root';
+import { RootLoader } from '../root';
 
-export default function Layout() {
+/**
+ * This layout is used specifically for the landing page and doesn't include the header and footer
+ */
+export default function LandingLayout() {
   const nonce = useNonce();
   const data = useRouteLoaderData<RootLoader>('root');
 
@@ -33,7 +35,8 @@ export default function Layout() {
             shop={data.shop}
             consent={data.consent}
           >
-            <PageLayout {...data}><Outlet /></PageLayout>
+            {/* No PageLayout wrapper - directly render the outlet */}
+            <Outlet />
           </Analytics.Provider>
         ) : (
           <Outlet />
@@ -43,4 +46,4 @@ export default function Layout() {
       </body>
     </html>
   );
-}
+} 

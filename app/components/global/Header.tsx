@@ -6,7 +6,7 @@ import {
   useOptimisticCart,
 } from '@shopify/hydrogen';
 import type {HeaderQuery, CartApiQueryFragment} from 'storefrontapi.generated';
-import {useAside} from '~/components/Aside';
+import {useAside} from './Aside';
 
 interface HeaderProps {
   header: HeaderQuery;
@@ -54,6 +54,13 @@ export function HeaderMenu({
   const className = `header-menu-${viewport}`;
   const {close} = useAside();
 
+  // Add creators link
+  const creatorsMenuItem = {
+    id: 'modamosaic-creators',
+    url: '/creators',
+    title: 'Creators',
+  };
+
   return (
     <nav className={className} role="navigation">
       {viewport === 'mobile' && (
@@ -67,6 +74,19 @@ export function HeaderMenu({
           Home
         </NavLink>
       )}
+      
+      {/* Add creators link before the menu items */}
+      <NavLink
+        className="header-menu-item"
+        end
+        onClick={close}
+        prefetch="intent"
+        style={activeLinkStyle}
+        to={creatorsMenuItem.url}
+      >
+        {creatorsMenuItem.title}
+      </NavLink>
+      
       {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
         if (!item.url) return null;
 

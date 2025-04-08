@@ -5,8 +5,16 @@ import type {
   ProductOptionValueSwatch,
 } from '@shopify/hydrogen/storefront-api-types';
 import {AddToCartButton} from './AddToCartButton';
-import {useAside} from './Aside';
+import {useAside} from '../global/Aside';
 import type {ProductFragment} from 'storefrontapi.generated';
+import {useEffect, useCallback, useState, useRef} from 'react';
+import {
+  useProductOptions,
+  useAnalytics,
+  getProductOptions,
+  type ProductVariantFragmentKey,
+  type ShopFragment,
+} from '@shopify/hydrogen/storefront-api-types';
 
 export function ProductForm({
   productOptions,

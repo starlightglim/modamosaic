@@ -1,19 +1,27 @@
-import {Await, Link} from '@remix-run/react';
+import {useNonce} from '@shopify/hydrogen';
+import {
+  Await,
+  useMatches,
+  Form,
+  useNavigate,
+  useRouteLoaderData,
+  Link
+} from '@remix-run/react';
 import {Suspense, useId} from 'react';
 import type {
   CartApiQueryFragment,
   FooterQuery,
   HeaderQuery,
 } from 'storefrontapi.generated';
-import {Aside} from '~/components/Aside';
-import {Footer} from '~/components/Footer';
-import {Header, HeaderMenu} from '~/components/Header';
-import {CartMain} from '~/components/CartMain';
+import {Aside} from './Aside';
+import {Footer} from './Footer';
+import {Header, HeaderMenu} from './Header';
+import {CartMain} from '../product/CartMain';
 import {
   SEARCH_ENDPOINT,
   SearchFormPredictive,
-} from '~/components/SearchFormPredictive';
-import {SearchResultsPredictive} from '~/components/SearchResultsPredictive';
+} from '../SearchFormPredictive';
+import {SearchResultsPredictive} from '../SearchResultsPredictive';
 
 interface PageLayoutProps {
   cart: Promise<CartApiQueryFragment | null>;

@@ -1,16 +1,24 @@
-import {type LoaderFunctionArgs} from '@shopify/remix-oxygen';
-import {useLoaderData, type MetaFunction} from '@remix-run/react';
+import {redirect, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import {
+  useLoaderData,
+  Link,
+  useLocation,
+  useSearchParams,
+  useNavigation,
+  type MetaFunction,
+} from '@remix-run/react';
+import {useSetAtom} from 'jotai';
+import {Image, Analytics} from '@shopify/hydrogen';
+import {ProductPrice} from '~/components/product/ProductPrice';
+import {ProductImage} from '~/components/product/ProductImage';
+import {ProductForm} from '~/components/product/ProductForm';
 import {
   getSelectedProductOptions,
-  Analytics,
   useOptimisticVariant,
   getProductOptions,
   getAdjacentAndFirstAvailableVariants,
   useSelectedOptionInUrlParam,
 } from '@shopify/hydrogen';
-import {ProductPrice} from '~/components/ProductPrice';
-import {ProductImage} from '~/components/ProductImage';
-import {ProductForm} from '~/components/ProductForm';
 
 export const meta: MetaFunction<typeof loader> = ({data}) => {
   return [

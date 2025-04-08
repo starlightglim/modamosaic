@@ -1,0 +1,66 @@
+/* Global styles for the Explore page */
+.window {
+  padding: 4px;
+  background-color: rgb(192, 192, 192);
+  box-shadow:
+      inset -1px -1px #0a0a0a,
+      inset 1px 1px #dfdfdf,
+      inset -2px -2px grey,
+      inset 2px 2px #fff;
+  position: relative;
+  margin-bottom: 16px;
+  backdrop-filter: blur(5px);
+  background-color: rgba(192, 192, 192, 0.8);
+}
+
+.windowHeader {
+  background-color: #000080;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  height: 20px; 
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+
+.selectedWindow .windowHeader {
+  background-color: #1084d0;
+}
+
+.windowTitle {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.windowClose {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: #c0c0c0;
+  color: black;
+  text-align: center;
+  line-height: 16px;
+  margin-right: 2px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.windowContent {
+  background-color: #fff;
+  padding: 8px;
+  border: 1px solid #808080;
+  overflow: auto;
+  width: 100%;
+  height: calc(100% - 24px);
+}
+
+.desktopBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #008080; /* Classic Windows 95 teal background */
+  z-index: -1;
+} 

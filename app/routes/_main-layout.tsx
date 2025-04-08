@@ -10,9 +10,13 @@ import {
 import resetStyles from '~/styles/reset.css?url';
 import appStyles from '~/styles/app.css?url';
 import {PageLayout} from '~/components/global/PageLayout';
-import { RootLoader } from './root';
+import { RootLoader } from '../root';
 
-export default function Layout() {
+/**
+ * This layout is used for standard pages that include the header and footer
+ * It ensures that all Tailwind styles are properly loaded
+ */
+export default function CommonLayout() {
   const nonce = useNonce();
   const data = useRouteLoaderData<RootLoader>('root');
 
@@ -43,4 +47,4 @@ export default function Layout() {
       </body>
     </html>
   );
-}
+} 

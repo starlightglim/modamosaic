@@ -1,0 +1,305 @@
+/* ModaMosaic Creators Styling */
+
+/* Creator listing page */
+.creators-page {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.creators-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.page-description {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.creators-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.creator-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.creator-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.creator-image {
+  height: 250px;
+  overflow: hidden;
+}
+
+.creator-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.creator-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #999;
+}
+
+.creator-info {
+  padding: 1.5rem;
+  background: white;
+}
+
+.creator-info h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.creator-info p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Individual creator page */
+.creator-page {
+  --creator-primary-color: #333;
+  --creator-secondary-color: #f5f5f5;
+  --creator-accent-color: #0077cc;
+  --creator-text-color: #333;
+  --creator-background-color: #fff;
+}
+
+.creator-header {
+  margin-bottom: 3rem;
+}
+
+.creator-banner {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.creator-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.creator-profile {
+  display: flex;
+  margin-top: -50px;
+  padding: 0 2rem;
+  position: relative;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.creator-profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid var(--creator-background-color);
+  background: white;
+}
+
+.creator-profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.creator-profile-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--creator-primary-color);
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.creator-profile-info {
+  padding: 1rem 0 0 2rem;
+}
+
+.creator-profile-info h1 {
+  margin: 0 0 1rem;
+  font-size: 2.5rem;
+  color: var(--creator-primary-color);
+}
+
+.creator-bio {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  color: var(--creator-text-color);
+}
+
+.creator-social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.creator-social-links a {
+  padding: 0.5rem 1rem;
+  background: var(--creator-primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.creator-social-links a:hover {
+  background: var(--creator-accent-color);
+}
+
+.creator-collections {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.creator-collections h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--creator-primary-color);
+}
+
+.creator-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  height: 250px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 1rem;
+  background: white;
+}
+
+.product-info h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  color: var(--creator-primary-color);
+}
+
+.product-price {
+  font-weight: bold;
+  color: var(--creator-accent-color);
+}
+
+.creator-cta {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.creator-cta .button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: var(--creator-accent-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.creator-cta .button:hover {
+  background: var(--creator-primary-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .creators-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .creator-profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .creator-profile-info {
+    padding: 1.5rem 0 0;
+  }
+  
+  .creator-social-links {
+    justify-content: center;
+  }
+  
+  .creator-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .creator-banner {
+    height: 200px;
+  }
+  
+  .creator-profile-image {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .creator-profile-info h1 {
+    font-size: 2rem;
+  }
+} 
